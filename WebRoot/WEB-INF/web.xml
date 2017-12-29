@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+  	
+  <servlet>
+  	<servlet-name>HelloWebServiceService</servlet-name>
+  	<servlet-class>
+  		com.sun.xml.ws.transport.http.servlet.WSServlet
+  	</servlet-class>
+  	<load-on-startup>1</load-on-startup>
+  </servlet>  
+   <servlet-mapping>
+  	<servlet-name>HelloWebServiceService</servlet-name>
+  	<url-pattern>/HelloWebServicePort</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <servlet-name>HttpServiceServlet</servlet-name>
+    <servlet-class>cn.com.dhcc.test.HttpServiceServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>HttpServiceServlet</servlet-name>
+    <url-pattern>/HttpServiceServlet</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>  
+	 <!-- 当前servlet的名称 -->  
+	 <servlet-name>HelloServlet</servlet-name>  
+	  <!-- servlet所在的包名跟类名 -->  
+	 <servlet-class>cn.com.dhcc.test.HttpServiceServlet</servlet-class>  
+ </servlet>  
+ <servlet-mapping>  
+	 <!-- 必须于上一个servlet标签中的名称保持一致 -->  
+	 <servlet-name>HelloServlet</servlet-name>  
+	 <!-- 这是你在浏览器上访问的地址,必须要提 /servlet/xxxx 格式，不然tomcat启动会报错-->  
+	 <url-pattern>/servlet/helloWorld</url-pattern>  
+ </servlet-mapping> 
+ 
+ 
+ <servlet>  
+	 <!-- 当前servlet的名称 -->  
+	 <servlet-name>ForwardServlet</servlet-name>  
+	  <!-- servlet所在的包名跟类名 -->  
+	 <servlet-class>cn.com.dhcc.test.ForwardServlet</servlet-class>  
+   </servlet>  
+   <servlet-mapping>  
+	 <!-- 必须于上一个servlet标签中的名称保持一致 -->  
+	 <servlet-name>ForwardServlet</servlet-name>  
+	 <!-- 这是你在浏览器上访问的地址,必须要提 /servlet/xxxx 格式，不然tomcat启动会报错-->  
+	 <url-pattern>/forward</url-pattern>  
+   </servlet-mapping> 
+ 
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <listener>
+  	<listener-class>
+  		com.sun.xml.ws.transport.http.servlet.WSServletContextListener
+  	</listener-class>
+  </listener></web-app>

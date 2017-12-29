@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<center><h1>集成支撑软件2.X 版本部署说明</h1></center>
+		<h2>1、系统配置（<font color="red">说明：在系统启动前请确保以下文件按照生产环境实际情况配置完成</font>）</h2>
+		<ul>
+			<li>启动&nbsp;配置：WRIS\WEB-INF\WEB.XML</li>
+			<li>基本&nbsp;配置：WRIS\WEB-INF\CLASSES\APP.PROPERTIES</li>
+			<li>数据&nbsp;配置：WRIS\WEB-INF\CLASSES\JDBC.PROPERTIES</li>
+			<li>任务&nbsp;配置：WRIS\WEB-INF\CLASSES\APPLICATIONcONTEXT.XML</li>
+			<li>TLQ&nbsp;配置：WRIS\WEB-INF\CLASSES\MQ.XML</li>
+			<li>日志&nbsp;配置：WRIS\WEB-INF\CLASSES\LOG4J.PROPERTIES</li>
+		</ul>
+		<h2>2、定时任务启动及间隔时间（<font color="red">说明：标注（中央）和（节点）的请按节点类型配置，未标注的中央和节点都需要配置，启动时间非特殊情况保持默认。</font>）</h2>
+		<ul>
+			<li>任务：AutoWaterReadMailJob，每天8点到20点每隔三十分钟执行一次。（中央）</li>
+			<li>任务：AutoresolveExcelJob，延迟五分钟启动，每天8点到20点每隔三十分钟执行一次。（中央）</li>
+			<li>任务：AutoWaterSenMailJob，每天晚上10点执行一次。（中央）</li>
+			<li>任务：ProcDataReport，延迟1分钟启动，每天00:00:00执行。（中央）</li>
+			<li>任务：BaseAndExchStatistics，延迟1分钟启动，每天00:30:00执行。（中央）</li>
+			<li>任务：DataExchMonitor，延迟50秒启动，每隔30分钟执行一次。（节点）</li>
+			<li>任务：DataExchTrack，延迟50秒启动，每隔1小时执行一次。（节点）</li>
+			<li>任务：BusinessService，延迟12秒启动，每隔4小时执行一次。</li>
+			<li>任务：DMZMultiFile，延迟5秒启动，每隔8小时执行一次。</li>
+			<li>任务：FlowChain，延迟10秒启动，每隔30秒执行一次。</li>
+			<li>任务：ProcDataExchTrack，延迟1分钟启动，每隔6小时执行一次。</li>
+			<li>任务：ProcStAuditReportDay，延迟1分钟启动，每天01:00:00执行。</li>
+			<li>任务：ProcStAutoTaskDay，延迟1分钟启动，每天02:00:00执行。</li>
+			<li>任务：ProcStSynchroFlowDay，延迟1分钟启动，每天01:30:00执行。</li>
+			<li>任务：ProcSyncExchData，延迟1分钟启动，每隔5分钟执行一次。</li>
+			<li>任务：Remove，延迟30秒启动，每隔1小时执行一次。</li>
+			<li>任务：TempTask，延迟50秒启动，每隔30秒执行一次。</li>
+			<li>任务：Water，延迟1分钟启动，每隔1小时执行一次。</li>
+			<li>任务：WaterMend，延迟30分钟启动，每隔1小时执行一次。</li>
+			<li>任务：WeeklyReport,延迟30秒启动，每周一的凌晨两点启动一次。</li>
+			<li>任务：MonthReport，延迟1分30秒启动，每月1号的凌晨两点启动</li>
+		</ul>
+	</body>
+</html>

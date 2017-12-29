@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>列表筛选</title>
+<script type="text/javascript" src="jquery-1.8.3.js"></script>
+<script type="text/javascript" src="../si.common.js"></script>
+<script type="text/javascript" src="jQuery.Hz2Py-min-dim.js"></script>
+<script type="text/javascript" src="jquery.textselect.js"></script>
+<script type="text/javascript">
+	var source = [ {
+		"autotext" : "北京",
+		"code" : "BJ"
+	}, {
+		"autotext" : "上海",
+		"code" : "SH"
+	}, {
+		"autotext" : "天津",
+		"code" : "TJ"
+	}, {
+		"autotext" : "湖北",
+		"code" : "HB"
+	}, {
+		"autotext" : "北京",
+		"code" : "BJ"
+	}, {
+		"autotext" : "北京",
+		"code" : "BJ"
+	}, {
+		"autotext" : "上海",
+		"code" : "SH"
+	}, {
+		"autotext" : "天津",
+		"code" : "TJ"
+	}, {
+		"autotext" : "湖北",
+		"code" : "HB"
+	}, {
+		"autotext" : "北京",
+		"code" : "BJ"
+	} ];
+	$(function() {
+		$.injectAutoSelect({
+			id : "s",
+			dataSourceSelectId : "sendnode",
+			mult : true,
+			autoTextMapping : "value|c|a"
+		});
+	});
+</script>
+</head>
+<body>
+	<div style="border-top: 0px"></div>
+	<input id="s" type="text" value="b" />
+	<select style="width:108px;display:none;" class="w_160" id="sendnode"
+		name="sendnode">
+		<option value="">全部</option>
+		<option value="BJ">北京市</option>
+		<option value="TJ">天津市</option>
+		<option value="HE">河北省</option>
+		<option value="SX">山西省</option>
+		<option value="NM">内蒙古自治区</option>
+		<option value="LN">辽宁省</option>
+		<option value="JL">吉林省</option>
+		<option value="HL">黑龙江省</option>
+		<option value="SH">上海市</option>
+		<option value="JS">江苏省</option>
+		<option value="ZJ">浙江省</option>
+		<option value="AH">安徽省</option>
+		<option value="FJ">福建省</option>
+		<option value="JX">江西省</option>
+		<option value="SD">山东省</option>
+		<option value="HA">河南省</option>
+		<option value="HB">湖北省</option>
+		<option value="HN">湖南省</option>
+		<option value="GD">广东省</option>
+		<option value="GX">广西壮族自治区</option>
+		<option value="HI">海南省</option>
+		<option value="CQ">重庆市</option>
+		<option value="SC">四川省</option>
+		<option value="GZ">贵州省</option>
+		<option value="YN">云南省</option>
+		<option value="XZ">西藏自治区</option>
+		<option value="SN">陕西省</option>
+		<option value="GS">甘肃省</option>
+		<option value="QH">青海省</option>
+		<option value="NX">宁夏回族自治区</option>
+		<option value="XJ">新疆维吾尔自治区</option>
+		<option value="XB">新疆生产建设兵团</option>
+		<option value="CJW">长江水利委员会</option>
+		<option value="YRC">黄河水利委员会</option>
+		<option value="HRC">淮河水利委员会</option>
+		<option value="HWC">海河水利委员会</option>
+		<option value="ZJW">珠江水利委员会</option>
+		<option value="SLW">松辽水利委员会</option>
+		<option value="TBA">太湖流域管理局</option>
+
+	</select>
+<font style="text-decoration: line-through"></font>
+</body>
+</html>
